@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CalcArrayPointTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>CalcArrayPoints.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A8027E471E94C7F70017B1EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A803A4E91E95952D001850F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
