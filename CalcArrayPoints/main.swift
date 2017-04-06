@@ -8,62 +8,98 @@
 
 import Foundation
 
-func add(left : Int, right : Int) -> Int {
-    return left + right;
-}
-
-func subtract(left : Int, right : Int) -> Int {
-    return left - right;
-}
-
-func multiply(left : Int, right : Int) -> Int{
-    return left*right;
-}
-
-func divide(left : Int, right : Int) -> Int{
-    return left/right;
-}
-
-func mathOperation(left : Int, right : Int, operation : (Int, Int) -> Int) -> Int {
-    return operation(left, right);
-}
-
-func add(array : [Int]) -> Int {
-    var sum : Int = 0;
-    for num in array {
-        sum += num;
+func add(left : Int?, right : Int?) -> Int {
+    if(left == nil || right == nil){
+        return 0;
+    }else{
+        return left! + right!;
     }
-    return sum;
 }
 
-func multiply(array : [Int]) -> Int {
+func subtract(left : Int?, right : Int?) -> Int {
+    if(left == nil || right == nil){
+        return 0;
+    }else{
+        return left! - right!;
+    }
+}
+
+func multiply(left : Int?, right : Int?) -> Int{
+    if(left == nil || right == nil){
+        return 0;
+    }else{
+        return left! * right!;
+    }
+}
+
+func divide(left : Int?, right : Int?) -> Int{
+    if(left == nil || right == nil){
+        return 0;
+    }else{
+        return left! / right!;
+    }
+}
+
+func mathOperation(left : Int?, right : Int?, operation : (Int?, Int?) -> Int) -> Int {
+    if(left == nil || right == nil){
+        return 0;
+    }else{
+        return operation(left, right);
+    }
+}
+
+func add(array : [Int]?) -> Int {
+    if(array == nil){
+        return 0;
+    }else{
+        var sum : Int = 0;
+        for num in array! {
+            sum += num;
+        }
+        return sum;
+    }
+}
+
+func multiply(array : [Int]?) -> Int {
+    if(array == nil){
+        return 0;
+    }
     var product : Int = 1;
-    for num in array {
+    for num in array! {
         product *= num
     }
     return product;
 }
 
-func count(array : [Int]) -> Int {
+func count(array : [Int]?) -> Int {
+    if(array == nil){
+        return 0;
+    }
     var count = 0;
-    for _ in array {
+    for _ in array! {
         count+=1;
     }
     return count;
 }
 
-func average(array : [Int]) -> Int {
+func average(array : [Int]?) -> Int {
+    if(array == nil){
+        return 0;
+    }
     var sum = 0;
     var count = 0;
-    for num in array {
+    for num in array! {
         sum+=num
         count+=1
     }
     return sum / count;
 }
 
-func reduce(array : [Int], operation : ([Int]) -> Int) -> Int {
-    return operation(array);
+func reduce(array : [Int]?, operation : ([Int]?) -> Int) -> Int {
+    if(array == nil){
+        return 0;
+    }
+    return operation(array!);
 }
 
 func add(p1 : (Int, Int), p2 : (Int, Int)) -> (Int, Int){
